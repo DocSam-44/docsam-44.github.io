@@ -1,0 +1,281 @@
+/* body {
+    background-color: rgb(231, 226, 226)
+} */
+/* !I didn't think I should get rid of the above code, but it is no longer useful because the background hass been altered by code lower down in this file already  */
+/* *the below code alters the colour of all h1 in the html file to have black as the font colour */
+h1 {
+  color: rgb(8, 8, 8);
+}
+
+/* *the below code alters the colour of all h1 in the html file to have the applied font family */
+
+h1 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+/* *the below code alters the font and size of one subheading in the html file to have the applied font family */
+
+#responses1{
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#responses1
+ {
+    font-size: 15px;
+}
+/* *the below code alters the colour of all paragraphs in the html file to have the applied font family */
+p {
+  font-family: 'Times New Roman', Times, Arial, sans-serif;
+  font-weight: bold;
+}
+
+/* * the below code applied a bolded font to all paragraphs */
+p.thick {
+  font-weight: bold;
+}
+
+/* classes */
+/*!the below code allowed me to specify a different font specificallly for the website/assignment title and the subheading label with my name */
+.responses {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: aliceblue;
+}
+
+/*initial attempt to scale up an image version that I no longer need */
+/* .scaled img {
+  width: 700px;
+  margin-left: 0%;
+  margin-top: 0px;
+} */
+
+/*!tiled is the class name I assigned to version 3s effects. It includes the tile effect, size adjustment of individual images, size adjustment of the width the tile collection can take up on the website */
+.tiled {
+  background-image: url('20230808_154444.jpg');
+  background-repeat: repeat;
+  background-size: 45px;
+
+  min-height: 500px;
+  padding: 20px;
+}
+
+/*! the below code is the effects applied to version 4. it contains a filter to adjust brighness, ctrast, and saturate. I have also altered the scale by changing the width and I also used mix-blend-mode to highten the effects of the filter as they worked well together */
+.brightened img {
+  width: 300px;
+  filter: brightness(250%) contrast(100%) saturate(2000%);
+  mix-blend-mode: multiply(50%);
+}
+
+/* body {
+    background-color: rgb(200, 200, 52);
+} */
+/**no longer need the above code because the media querry cover it */
+/* .fragmented {} */
+
+/* 
+@keyframes mymove {
+  from {background-color: red;}
+  to {background-color: blue;}
+} */
+/* <style>#myDIV {
+    width: 300px;
+    height: 200px;
+    background: red;
+    animation: mymove 5s infinite;
+} */
+
+/* 
+@keyframes mymove {
+  from {background-color: red;}
+  to {background-color: blue;}
+}
+</style> */
+
+/* body {
+    background: url(20230808_154444.jpg);
+} */
+
+/* .out {
+  width: 455px;
+  height: 275px;
+  border: 1px solid red;
+  position: relative;
+  overflow: hidden;
+  margin: 20px;
+} */
+/* ! the following code was able to accidently create the red design that overlays the website. I do not know how it works because I made it by accident but I feel that its accidental origins align with the text that this assignment is engaging with*/
+.in {
+  width: 550px;
+  height: 30000px;
+  border: 1px solid green;
+  position: absolute;
+  left: 200px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 500px rgba(226, 21, 21, 0.586);
+}
+
+.bottom .in {
+  bottom: 0;
+  left: 200px;
+}
+
+/* html {
+  scroll-behavior: smooth;
+} */
+
+/* 
+img {
+  float: right;
+} */
+
+/*! above code was effective but not what I liked  */
+/* * code below did not shrink the image successfully so i made a new branch and figured out a method: code is no longer needed but left for prof */
+/* 
+.shrink_image {
+  max-width: 0.002%;
+  max-height: 0.002%;
+} */
+
+/* 
+img {
+  width: 900px;
+  height: 50px;
+  object-fit: cover;
+  object-position: 80% 20%; /* Panned to a specific fragment
+} */
+
+/* !code below was able to work with the background image code to apply the effects. the reasoning is unknown as it occured during fiddling with the code*/
+img1 {
+  width: 100px;
+  height: 200px;
+  object-fit: cover;
+  object-position: 80% 20%;
+  /* Panned to a specific fragment */
+}
+
+/* !div (like a section of code) */
+/* this element is written within the div, so it inherits the div's class */
+/* !this allowed the text on the page to be readible despite the background image by adding a colour block behind each part of text where this is applied */
+.words {
+  background-color: rgb(155, 172, 186);
+
+}
+
+/*!the following made the two photos that make up version 5 be able to sit next to each other */
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+
+/* !the following are the effect on version 1 which is the background image all the way past matrix and to brightness*/
+.container {
+  position: relative;
+  overflow: hidden;
+  /* Other styles for your container */
+}
+
+/* *this has rotated the background image */
+/* container"" mandatory for invisiable pseudo element */
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url('20230808_154444.jpg');
+  background-size: cover;
+  /* Apply your transformation here */
+  /* transform: rotate(70deg) scale(1.2); */
+  transform: matrix(1.299, 0.95, -0.35, 1.299, 5, 0);
+  /* !matrix allows me to use multiple transformations with a single line of code so while it might look like one property, there is 5/6 + filter to equal 6/7 properties*/
+  filter: brightness(0.7);
+
+}
+
+/* !this turned one of the paired images for version 5 into a black and white photo */
+.noir {
+  -webkit-filter: grayscale(100%);
+  /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+  max-width: 100%;
+  height: auto;
+}
+
+/* by adding this to the picture on the right, I was able to have both pictures be acted on by a class and brough forward without any real change since grayscale is set to 0% */
+/* !this kept the other of the paired images for version five looking normal while bringing it to the front layer of the page to match the other one*/
+.blanc {
+  -webkit-filter: grayscale(0%);
+  /* Safari 6.0 - 9.0 */
+  filter: grayscale(0%);
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+
+/* .overlay{position: relative; Essential: keeps text inside this box */
+/* text-align: center;
+  color: white;} */
+
+
+/* .boxedup{
+  position: absolute;
+  top: 50%;           
+  Move to vertical center */
+/* left: 50%;         
+   Move to horizontal center */
+/* transform: translate(-50%, -50%); Perfectly center the text */
+/* font-size: 24px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px #000000; Makes text easier to read
+   } */
+/* !this is an effect placed on version two to make the overlayed words p1*/
+.box {
+  position: relative;
+  /* Essential: keeps text inside this box */
+  text-align: center;
+  color: rgb(12, 11, 11);
+}
+
+/* !this is an effect placed on version two to make the overlayed words p2 */
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  /* Move to vertical center */
+  left: 50%;
+  /* Move to horizontal center */
+  transform: translate(-50%, -50%);
+  /* Perfectly center the text */
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px #000000;
+  /* Makes text easier to read */
+}
+
+/* !this is an effect placed on version two to make the overlayed words semi-transparent and larger */
+.bigword {
+  font-size: 200px;
+  opacity: 0.7;
+  /* 50% transparent */
+
+}
+
+/* ! the following creates a media querry effect so that the page resizes itself for different electronics */
+/* Default styles (Mobile) */
+body {
+  background-color: rgb(120, 61, 176);
+  font-size: 14px;
+}
+
+/* Tablet and Desktop (at least 768px wide) */
+@media screen and (min-width: 768px) {
+  body {
+    background-color: rgb(35, 85, 156);
+    font-size: 18px;
+  }
+}
